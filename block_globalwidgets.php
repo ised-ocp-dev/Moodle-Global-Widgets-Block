@@ -49,11 +49,11 @@ class block_globalwidgets extends block_base {
         global $CFG, $USER, $COURSE, $DB;
 		
 		
-		$block_data = $DB->get_record_sql('SELECT * FROM {block_globalwidgets} WHERE courseid = '.$COURSE->id, array(1));
+		$block_data = $DB->get_record_sql('SELECT * FROM {block_globalwidgets} WHERE courseid = "'.$COURSE->id.'"', array(1));
 		if($block_data){
 			//var_dump($block_data->globalwidget);
 			
-			$content_data = $DB->get_record_sql('SELECT * FROM {globalwidgets_datacache} WHERE id = '.$block_data->globalwidget, array(1));
+			$content_data = $DB->get_record_sql('SELECT * FROM {globalwidgets_datacache} WHERE id = "'.$block_data->globalwidget.'"', array(1));
 			//var_dump($content_data->content);
 			
 			$this->content = new stdClass;
