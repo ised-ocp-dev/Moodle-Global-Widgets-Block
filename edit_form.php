@@ -57,7 +57,7 @@ class block_globalwidgets_edit_form extends block_edit_form {
 			// SAVE DATA
 			
 			//$block_data = $DB->get_record_sql('SELECT * FROM {block_globalwidgets} WHERE courseid = '.$courseid, array(1));
-			$DB->execute('DELETE FROM {block_globalwidgets} WHERE courseid='.intval($courseid));
+			$DB->execute("DELETE FROM {block_globalwidgets} WHERE courseid='".intval($courseid)."'");
 			
 			$data = new stdClass();
 			$data->courseid = $courseid;
