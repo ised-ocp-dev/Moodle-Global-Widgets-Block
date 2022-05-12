@@ -49,6 +49,7 @@ class block_globalwidgets_edit_form extends block_edit_form {
 		
 		
 		$select = $mform->addElement('select', 'display_widget', "Select Global Content To Display", $available_widgets, $attributes);
+		$mform->setDefault('display_widget', $widget->id);
 
         $mform->setType('config_title', PARAM_TEXT);
 		

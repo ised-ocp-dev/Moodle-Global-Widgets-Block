@@ -8,8 +8,8 @@
       <FIELDS>
 	  
      	<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="courseid" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
-		<FIELD NAME="globalwidget" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+		<FIELD NAME="globalwidget" TYPE="int" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
 		
       </FIELDS>
       <KEYS>
