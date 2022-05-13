@@ -57,7 +57,11 @@ class block_globalwidgets extends block_base {
 			//var_dump($content_data->content);
 			
 			$this->content = new stdClass;
-			$this->content->text =  $content_data->content;
+			$this->content->text =  format_text($content_data->content, FORMAT_HTML, null);
+			
+			//$template=format_text($template,FORMAT_HTML,$formatoptions);
+
+
 			
 			return  $this->content;
 		}else{
