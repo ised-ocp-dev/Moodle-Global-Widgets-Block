@@ -2,7 +2,7 @@
 //
 //
 //
-// ENGLISH
+// FRENCH 
 // get_string('NAME_OF_STRING', 'block_globalwidgets')
 //
 //
@@ -18,9 +18,8 @@ $string['globalwidgets:myaddinstance'] = 'Add a new globalwidgets block to Dashb
 $string['leaveblanktohide'] = 'leave blank to hide the title';
 
 
-$string['pluginname'] = 'Global Widgets';
-$string['newglobalwidgetsblock'] = 'New Global Widgets Block';
-$string['whichblocktodisplay'] = "Which Global Content should this block display?";
-$string['ManageAvailableGlobalContentBlocks'] = "Which Global Content should this block display?";
-$string['GlobalContentBlocks'] = "Global Content Blocks";
-
+$string['pluginname'] = 'Widget global';
+$string['newglobalwidgetsblock'] = 'Nouveau bloc de widget global';
+$string['whichblocktodisplay'] = "FRANCAIS BLOCK VOUS DISPLAY";
+$string['ManageAvailableGlobalContentBlocks'] = "Gérer les blocs de contenu globaux disponibles?";
+$string['GlobalContentBlocks'] = "Blocs de contenu globaux";

@@ -37,6 +37,7 @@ class block_globalwidgets extends block_base {
     }
 
     function specialization() {
+		
         $this->title = isset($this->config->title) ? format_string($this->config->title) : format_string(get_string('newglobalwidgetsblock', 'block_globalwidgets'));
 		$this->title = "";
     }
@@ -44,12 +45,51 @@ class block_globalwidgets extends block_base {
     function instance_allow_multiple() {
         return true;
     }
+	
 
     function get_content() {
         global $CFG, $USER, $COURSE, $DB;
 		
+		// NOTE $this is this current block :)
 		
-		$block_data = $DB->get_record_sql("SELECT * FROM {block_globalwidgets} WHERE courseid = '".intval($COURSE->id)."'", array(1));
+		//var_dump($this->instance->id);
+		
+		// // // // require_once( $CFG->libdir.'/blocklib.php' );
+		// // // // $context_course = context_course::instance($COURSE->id);
+		// // // // //var_dump($context_course->id);
+		
+		// // // // //$blockrecords = $DB->get_records('block_instances', array('blockname' => 'globalwidgets', 'parentcontextid' => $context_course->id));
+		// // // // //var_dump($blockrecords);
+		// // // // // foreach ($blockrecords as $b){
+			// // // // // var_dump($b);
+			// // // // // $blockinstance = block_instance('globalwidgets', $b);
+			// // // // // var_dump($blockinstance->config);
+		// // // // // }
+		
+		
+		
+		// // // // $course_blocks = $DB->get_records_sql("SELECT * FROM {block_instances} WHERE parentcontextid = '".intval($context_course->id)."'", array(1));
+		// // // // if($course_blocks){
+		
+			// // // // foreach($course_blocks as $course_block){
+				// // // // //var_dump($course_block->configdata);
+				// // // // //$block_instance = block_instance('globalwidgets', $course_block);
+				// // // // //var_dump($block_instance->instance->configdata);
+				// // // // //$config = unserialize(base64_decode($course_block->configdata));
+				// // // // //var_dump($config);
+
+				
+			// // // // }
+			
+
+		
+		// // // // }
+		
+		//$block_globalwidget = block_instance( 'globalwidgets', $context_course );
+
+		
+		
+		$block_data = $DB->get_record_sql("SELECT * FROM {block_globalwidgets} WHERE blockinstanceid = '".intval($this->instance->id)."'", array(1));
 		if($block_data){
 			//var_dump($block_data->globalwidget);
 			
