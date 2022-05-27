@@ -22,12 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.globalwidgets GNU GPL v3 or later
  */
 
-/**
- * Form for editing globalwidgets block instances.
- *
- * @copyright 2009 Tim Hunt
- * @license   http://www.gnu.org/copyleft/gpl.globalwidgets GNU GPL v3 or later 	
- */
+
 class block_globalwidgets_edit_form extends block_edit_form {
     protected function specific_definition($mform) {
         global $CFG, $DB;
@@ -56,6 +51,18 @@ class block_globalwidgets_edit_form extends block_edit_form {
 		
 		$mform->addElement('hidden','update_blockinstanceid','blockinstanceid',$_GET['id']);
 		$mform->setDefault('update_blockinstanceid', $_GET['bui_editid']);
+		
+			
+		// DEFAULT SELECTION FOR CONTENT MUST BE ADDED *AFTER* DOM
+		var_dump($content_data);
+		$mform->addElement('static', null, '',
+			'<script type="text/javascript">
+			//<![CDATA[
+				jQuery(document).ready(function() {
+					jQuery("option[value='.$_GET['bui_editid'].']").attr("selected",true);
+				});
+			//]]>
+		</script>');
 
         $mform->setType('config_title', PARAM_TEXT);
 		
@@ -86,6 +93,7 @@ class block_globalwidgets_edit_form extends block_edit_form {
 			
 			
 		}
+	
 	
     }
 	

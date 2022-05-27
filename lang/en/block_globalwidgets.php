@@ -19,8 +19,8 @@ $string['leaveblanktohide'] = 'leave blank to hide the title';
 
 
 $string['pluginname'] = 'Global Widgets';
-$string['newglobalwidgetsblock'] = 'New Global Widgets Block';
-$string['whichblocktodisplay'] = "Which Global Content should this block display?";
-$string['ManageAvailableGlobalContentBlocks'] = "Which Global Content should this block display?";
-$string['GlobalContentBlocks'] = "Global Content Blocks";
+$string['newglobalwidgetsblock'] = 'Which Global Content will this block display?';
+$string['whichblocktodisplay'] = "Manage Global Content";
+$string['ManageAvailableGlobalContentBlocks'] = "Manage Global Content";
+$string['GlobalContentBlocks'] = "Global Content";
 

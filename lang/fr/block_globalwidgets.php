@@ -19,7 +19,7 @@ $string['leaveblanktohide'] = 'leave blank to hide the title';
 
 
 $string['pluginname'] = 'Widget global';
-$string['newglobalwidgetsblock'] = 'Nouveau bloc de widget global';
-$string['whichblocktodisplay'] = "FRANCAIS BLOCK VOUS DISPLAY";
-$string['ManageAvailableGlobalContentBlocks'] = "Gérer les blocs de contenu globaux disponibles?";
-$string['GlobalContentBlocks'] = "Blocs de contenu globaux";
+$string['newglobalwidgetsblock'] = 'Quel contenu global ce bloc affichera-t-il ?';
+$string['whichblocktodisplay'] = "Gérer le contenu global";
+$string['ManageAvailableGlobalContentBlocks'] = "Gérer le contenu global";
+$string['GlobalContentBlocks'] = "Contenu global";
