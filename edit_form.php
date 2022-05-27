@@ -47,22 +47,14 @@ class block_globalwidgets_edit_form extends block_edit_form {
 		
 		
 		$select = $mform->addElement('select', 'display_widget', get_string('newglobalwidgetsblock','block_globalwidgets'), $available_widgets, $attributes);
-		$mform->setDefault('display_widget', $widget->id);
+		$mform->setDefault('display_widget', $_GET['bui_editid']);
 		
 		$mform->addElement('hidden','update_blockinstanceid','blockinstanceid',$_GET['id']);
 		$mform->setDefault('update_blockinstanceid', $_GET['bui_editid']);
 		
 			
 		// DEFAULT SELECTION FOR CONTENT MUST BE ADDED *AFTER* DOM
-		var_dump($content_data);
-		$mform->addElement('static', null, '',
-			'<script type="text/javascript">
-			//<![CDATA[
-				jQuery(document).ready(function() {
-					jQuery("option[value='.$_GET['bui_editid'].']").attr("selected",true);
-				});
-			//]]>
-		</script>');
+	
 
         $mform->setType('config_title', PARAM_TEXT);
 		
