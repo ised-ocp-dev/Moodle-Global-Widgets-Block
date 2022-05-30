@@ -40,22 +40,26 @@ class block_globalwidgets_edit_form extends block_edit_form {
 			
 			$available_widgets[$widget->id] = format_text($widget->title, FORMAT_HTML, null);
 			
+			//var_dump($widget->id);
+			
 		}
 		
 		
 		$courseid = required_param('id', PARAM_INT);
 		
 		
+		
+		// TODO: Need to search for the correct content we're trying to display
+		$this_block = $DB->get_record_sql("SELECT * FROM {block_globalwidgets} WHERE blockinstanceid = '".intval($_GET['bui_editid'])."'", array(1));
+		//var_dump('TIHS BLOCK: ' . $this_block->globalwidget);
+		
+		
 		$select = $mform->addElement('select', 'display_widget', get_string('newglobalwidgetsblock','block_globalwidgets'), $available_widgets, $attributes);
-		$mform->setDefault('display_widget', $_GET['bui_editid']);
+		$mform->setDefault('display_widget', $this_block->globalwidget); // WRONG ID SELECTION!!!! 
 		
 		$mform->addElement('hidden','update_blockinstanceid','blockinstanceid',$_GET['id']);
 		$mform->setDefault('update_blockinstanceid', $_GET['bui_editid']);
 		
-			
-		// DEFAULT SELECTION FOR CONTENT MUST BE ADDED *AFTER* DOM
-	
-
         $mform->setType('config_title', PARAM_TEXT);
 		
 		if( $_POST['display_widget']){
